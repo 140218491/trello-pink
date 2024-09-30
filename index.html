@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink girlie trello clone</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+  </style>
+</head>
+<body>
+  <button class="add-task-btn" onclick="addTask()">+</button>
+
+  <div class="board">
+    <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2>To Do</h2>
+      <div class="task-container" id="todo-tasks">
+        <div class="task" contenteditable="true" draggable="true" ondragstart="drag(event)" id="task1"></div>
+        <div class="task" contenteditable="true" draggable="true" ondragstart="drag(event)" id="task2"></div>
+      </div>
+    </div>
+
+    <div class="column" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2>In Progress</h2>
+      <div class="task-container" id="inprogress-tasks">
+        <div class="task" contenteditable="true" draggable="true" ondragstart="drag(event)" id="task3">Welcome to angel's trello clone x</div>
+      </div>
+    </div>
+
+    <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <h2>Done</h2>
+      <div class="task-container" id="done-tasks"></div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

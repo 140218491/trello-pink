@@ -1,0 +1,140 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+  }
+
+  .board {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh; /* Ensure the board has a maximum height */
+  }
+
+  .add-task-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(145deg, #ff9a9e, #fad0c4); /* Gradient background for the "+" button */
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .add-task-btn:hover {
+    background-color: #e74c3c;
+  }
+
+  .column {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .column:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  }
+
+  .column h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Scrollbar Styles */
+  .task-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: 70vh;
+    padding-right: 10px;
+  }
+
+  /* Custom Scrollbar */
+  .task-container::-webkit-scrollbar {
+    width: 10px; /* Scrollbar width */
+  }
+
+  .task-container::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1); /* Track color */
+    border-radius: 10px;
+  }
+
+  .task-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #ff9a9e, #fad0c4); /* Custom gradient */
+    border-radius: 10px;
+  }
+
+  .task-container::-webkit-scrollbar-thumb:hover {
+    background-color: #e74c3c; /* Change color on hover */
+  }
+
+  .task {
+    padding: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(145deg, #ff9a9e, #fad0c4);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: grab; /* Hand cursor when hovering */
+    color: #4d4d4d;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+  }
+
+  .task:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* Hand cursor on hover */
+  }
+
+  .task:active {
+    cursor: grabbing;
+  }
+
+  .task[contenteditable="true"]:focus {
+    outline: none; /* Remove ugly outline when editing */
+    cursor: text; /* Only show text cursor when editing */
+  }
+
+  .remove-task {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+  }
+
+  .remove-task:hover {
+    background-color: #c0392b;
+  }
+
+  #todo h2, #inprogress h2, #done h2 {
+    color: #fff0f5;
+  }
